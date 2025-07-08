@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { ChevronRight } from "lucide-react"
 
@@ -16,6 +18,7 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
+    useSidebar,
 } from "@/components/ui/sidebar"
 
 const data = {
@@ -47,7 +50,7 @@ const data = {
                     url: '#',
                 },
                 {
-                    title: "Requisitos mínimos de hardware e software",
+                    title: "Requisitos mínimos",
                     url: '#',
                 },
             ],
@@ -57,11 +60,11 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Acesso ao formulário via link ou QR Code",
+                    title: "Acesso ao formulário",
                     url: '#',
                 },
                 {
-                    title: "Estrutura geral do formulário dividida em seções",
+                    title: "Estrutura geral",
                     url: '#',
                 },
                 {
@@ -101,23 +104,23 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Personalização do cabeçalho com nome do projeto e logotipo da instituição",
+                    title: "Cabeçalho e logotipo",
                     url: '#',
                 },
                 {
-                    title: "Escolha de cores e layout visual do formulário",
+                    title: "Cores e layout",
                     url: '#',
                 },
                 {
-                    title: "Configuração de obrigatoriedade dos campos essenciais",
+                    title: "Campos obrigatórios",
                     url: '#',
                 },
                 {
-                    title: "Controle de acesso ao formulário",
+                    title: "Controle de acesso",
                     url: '#',
                 },
                 {
-                    title: "Mensagens de confirmação personalizadas após o envio",
+                    title: "Mensagens personalizadas",
                     url: '#',
                 },
             ],
@@ -127,23 +130,23 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Formulário não avança por campos obrigatórios não preenchidos",
+                    title: "Campos obrigatórios não preenchidos",
                     url: '#',
                 },
                 {
-                    title: "Lista de alunos não aparece corretamente",
+                    title: "Lista de alunos não aparece",
                     url: '#',
                 },
                 {
-                    title: "Usuário não consegue acessar",
+                    title: "Usuário sem acesso",
                     url: '#',
                 },
                 {
-                    title: "Dificuldade ao selecionar data em dispositivos móveis",
+                    title: "Problemas em datas no mobile",
                     url: '#',
                 },
                 {
-                    title: "Soluções e recomendações para cada erro",
+                    title: "Soluções para erros",
                     url: '#',
                 },
             ],
@@ -153,23 +156,23 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Salvar o link do formulário nos favoritos do navegador",
+                    title: "Salvar link nos favoritos",
                     url: '#',
                 },
                 {
-                    title: "Criar um atalho do formulário na tela inicial do celular",
+                    title: "Criar atalho na tela inicial",
                     url: '#',
                 },
                 {
-                    title: "Preencher a seção de presença com atenção para evitar faltas indevidas",
+                    title: "Preencher presença com atenção",
                     url: '#',
                 },
                 {
-                    title: "Usar o preenchimento automático do navegador para campos frequentes",
+                    title: "Usar preenchimento automático",
                     url: '#',
                 },
                 {
-                    title: "Recomendações para preenchimento em grupo",
+                    title: "Dicas para preenchimento em grupo",
                     url: '#',
                 },
             ],
@@ -179,19 +182,19 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Importância do preenchimento correto e completo",
+                    title: "Importância do preenchimento correto",
                     url: '#',
                 },
                 {
-                    title: "Benefícios para o acompanhamento de presença e organização pedagógica",
+                    title: "Benefícios para organização",
                     url: '#',
                 },
                 {
-                    title: "Reforço do papel dos representantes e professores no preenchimento",
+                    title: "Papel dos representantes e professores",
                     url: '#',
                 },
                 {
-                    title: "Contato para suporte em caso de dúvidas ou problemas técnicos",
+                    title: "Contato para suporte técnico",
                     url: '#',
                 },
             ],
@@ -200,41 +203,68 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+    const { open } = useSidebar()
+
+    // Estado para submenus abertos - armazena títulos abertos
+    const [openSections, setOpenSections] = React.useState<string[]>([])
+
+    // Sempre que o sidebar abrir, fecha todos submenus
+    React.useEffect(() => {
+        if (open) {
+            setOpenSections([])
+        }
+    }, [open])
+
     return (
         <Sidebar {...props}>
-            <SidebarContent className="gap-0">
+            <SidebarContent className="gap-2">
                 {data.navMain.map((item) => (
                     <Collapsible
                         key={item.title}
-                        title={item.title}
-                        defaultOpen
-                        className="group/collapsible"
+                        open={openSections.includes(item.title)}
+                        onOpenChange={(isOpen) => {
+                            setOpenSections((prev) =>
+                                isOpen
+                                    ? [...prev, item.title]
+                                    : prev.filter((title) => title !== item.title)
+                            )
+                        }}
+                        className="group"
                     >
                         <SidebarGroup>
                             <SidebarGroupLabel
                                 asChild
-                                className="group/label text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sm"
+                                className="text-sm font-semibold ml-2 text-[#F3603A] text-left"
                             >
-                                <CollapsibleTrigger>
-                                    {item.title}{" "}
-                                    <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+                                <CollapsibleTrigger className="flex items-center justify-between w-full cursor-pointer">
+                                    {item.title}
+                                    <ChevronRight
+                                        className={
+                                            "ml-auto transition-transform " +
+                                            (openSections.includes(item.title)
+                                                ? "rotate-90"
+                                                : "")
+                                        }
+                                    />
                                 </CollapsibleTrigger>
                             </SidebarGroupLabel>
 
                             <CollapsibleContent>
                                 <SidebarGroupContent>
                                     <SidebarMenu>
-                                        {item.items.map((item) => (
-                                            <SidebarMenuItem key={item.title}>
-                                                <SidebarMenuButton asChild>
-                                                    <a href={item.url}>{item.title}</a>
+                                        {item.items.map((subitem) => (
+                                            <SidebarMenuItem key={subitem.title}>
+                                                <SidebarMenuButton
+                                                    asChild
+                                                    className="text-xs mt-2 pl-6"
+                                                >
+                                                    <a href={subitem.url}>{subitem.title}</a>
                                                 </SidebarMenuButton>
                                             </SidebarMenuItem>
                                         ))}
                                     </SidebarMenu>
                                 </SidebarGroupContent>
                             </CollapsibleContent>
-
                         </SidebarGroup>
                     </Collapsible>
                 ))}
