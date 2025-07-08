@@ -101,23 +101,23 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Personalização do cabeçalho com nome do projeto e logotipo da instituição",
+                    title: "Cabeçalho e logotipo",
                     url: '#',
                 },
                 {
-                    title: "Escolha de cores e layout visual do formulário",
+                    title: "Cores e layout",
                     url: '#',
                 },
                 {
-                    title: "Configuração de obrigatoriedade dos campos essenciais",
+                    title: "Campos obrigatórios",
                     url: '#',
                 },
                 {
-                    title: "Controle de acesso ao formulário",
+                    title: "Controle de acesso",
                     url: '#',
                 },
                 {
-                    title: "Mensagens de confirmação personalizadas após o envio",
+                    title: "Mensagens personalizadas",
                     url: '#',
                 },
             ],
@@ -127,23 +127,23 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Formulário não avança por campos obrigatórios não preenchidos",
+                    title: "Campos obrigatórios não preenchidos",
                     url: '#',
                 },
                 {
-                    title: "Lista de alunos não aparece corretamente",
+                    title: "Lista de alunos não aparece",
                     url: '#',
                 },
                 {
-                    title: "Usuário não consegue acessar",
+                    title: "Usuário sem acesso",
                     url: '#',
                 },
                 {
-                    title: "Dificuldade ao selecionar data em dispositivos móveis",
+                    title: "Problemas em datas no mobile",
                     url: '#',
                 },
                 {
-                    title: "Soluções e recomendações para cada erro",
+                    title: "Soluções para erros",
                     url: '#',
                 },
             ],
@@ -153,23 +153,23 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Salvar o link do formulário nos favoritos do navegador",
+                    title: "Salvar link nos favoritos",
                     url: '#',
                 },
                 {
-                    title: "Criar um atalho do formulário na tela inicial do celular",
+                    title: "Criar atalho na tela inicial",
                     url: '#',
                 },
                 {
-                    title: "Preencher a seção de presença com atenção para evitar faltas indevidas",
+                    title: "Preencher presença com atenção",
                     url: '#',
                 },
                 {
-                    title: "Usar o preenchimento automático do navegador para campos frequentes",
+                    title: "Usar preenchimento automático",
                     url: '#',
                 },
                 {
-                    title: "Recomendações para preenchimento em grupo",
+                    title: "Dicas para preenchimento em grupo",
                     url: '#',
                 },
             ],
@@ -179,19 +179,19 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Importância do preenchimento correto e completo",
+                    title: "Importância do preenchimento correto",
                     url: '#',
                 },
                 {
-                    title: "Benefícios para o acompanhamento de presença e organização pedagógica",
+                    title: "Benefícios para organização",
                     url: '#',
                 },
                 {
-                    title: "Reforço do papel dos representantes e professores no preenchimento",
+                    title: "Papel dos representantes e professores",
                     url: '#',
                 },
                 {
-                    title: "Contato para suporte em caso de dúvidas ou problemas técnicos",
+                    title: "Contato para suporte técnico",
                     url: '#',
                 },
             ],
@@ -213,7 +213,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         <SidebarGroup>
                             <SidebarGroupLabel
                                 asChild
-                                className="group/label text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sm"
+                                className="text-base font-semibold text-sidebar-foreground text-xs"
                             >
                                 <CollapsibleTrigger>
                                     {item.title}{" "}
@@ -226,7 +226,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                     <SidebarMenu>
                                         {item.items.map((item) => (
                                             <SidebarMenuItem key={item.title}>
-                                                <SidebarMenuButton asChild>
+                                                <SidebarMenuButton 
+                                                asChild
+                                                className="text-xs pl-3 mt-2"
+                                                >
                                                     <a href={item.url}>{item.title}</a>
                                                 </SidebarMenuButton>
                                             </SidebarMenuItem>
