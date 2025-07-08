@@ -1,8 +1,4 @@
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
-export const metadata = { /* ... */ };
 
 
 export default function Hero() {
@@ -15,7 +11,7 @@ export default function Hero() {
             </div>
 
             <div>
-                <button className="bg-[#d81e1e] text-white font-bold py-2 px-4 rounded-[12px] hover:bg-[#6B0505] ">Introdução</button>
+                <button className="bg-[#d81e1e] text-white font-bold py-2 px-4 rounded-[12px] hover:bg-[#6B0505] cursor-pointer">Introdução</button>
             </div>
         </section>
     )
