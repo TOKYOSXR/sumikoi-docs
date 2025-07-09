@@ -2,6 +2,7 @@ import Footer from "./components/footer";
 import "./globals.css";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
+import Navbar from "./components/NavBar";
 
 export default function RootLayout({
   children,
@@ -18,14 +19,11 @@ export default function RootLayout({
       </head>
       <body>
         <SidebarProvider>
+          <Navbar />
           <AppSidebar />
           <SidebarInset>
-            <div className="flex flex-col min-h-screen p-4 gap-4">
-              {/* Botão para abrir/fechar sidebar */}
-              <SidebarTrigger className="self-start" />
-              {/* Páginas sendo renderizadas */}
+            <div className="pt-16 px-4 flex flex-col min-h-screen gap-4">
               {children}
-              {/* Footer no final da página */}
               <Footer />
             </div>
           </SidebarInset>
