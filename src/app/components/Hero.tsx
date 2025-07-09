@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 
 
 export default function Hero() {
@@ -11,7 +11,9 @@ export default function Hero() {
             </div>
 
             <div>
+                <Link href="/introducao">
                 <button className="bg-[#d81e1e] text-white font-bold py-2 px-4 rounded-[12px] hover:bg-[#6B0505] cursor-pointer">Introdução</button>
+                </Link>
             </div>
         </section>
     )
