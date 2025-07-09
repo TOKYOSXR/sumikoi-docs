@@ -15,6 +15,7 @@ import {
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
+    SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
@@ -217,7 +218,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     return (
         <Sidebar {...props}>
-            <SidebarContent className="gap-2">
+            <SidebarContent className="gap-2 mt-23">
                 {data.navMain.map((item) => (
                     <Collapsible
                         key={item.title}
@@ -251,12 +252,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
                             <CollapsibleContent>
                                 <SidebarGroupContent>
-                                    <SidebarMenu>
+                                    <SidebarMenu className="pl-4 ml-2 border-l border-[#999999]/30 text-zinc-600">
                                         {item.items.map((subitem) => (
                                             <SidebarMenuItem key={subitem.title}>
                                                 <SidebarMenuButton
                                                     asChild
-                                                    className="text-xs mt-2 pl-6"
+                                                    className="text-xs mt-2 pl-1 hover:text-primary"
                                                 >
                                                     <a href={subitem.url}>{subitem.title}</a>
                                                 </SidebarMenuButton>
