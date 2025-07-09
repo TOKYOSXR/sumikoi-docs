@@ -1,6 +1,6 @@
 import Footer from "./components/footer";
 import "./globals.css";
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarProvider} from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
 import Navbar from "./components/NavBar";
 
