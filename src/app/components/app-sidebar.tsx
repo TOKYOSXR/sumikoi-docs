@@ -217,7 +217,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     return (
         <Sidebar {...props}>
-            <SidebarContent className="gap-2 mt-23">
+            <SidebarContent className="gap-2 mt-23 bg-white text-black dark:bg-black dark:text-white">
                 {data.navMain.map((item) => (
                     <Collapsible
                         key={item.title}
@@ -256,7 +256,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                             <SidebarMenuItem key={subitem.title}>
                                                 <SidebarMenuButton
                                                     asChild
-                                                    className="text-xs mt-2 pl-1 hover:text-primary"
+                                                    className="text-xs mt-2 pl-1 hover:text-primary dark:text-white"
                                                 >
                                                     <a href={subitem.url}>{subitem.title}</a>
                                                 </SidebarMenuButton>
