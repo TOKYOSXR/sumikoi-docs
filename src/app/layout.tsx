@@ -1,16 +1,18 @@
-import Footer from "./components/footer";
-import "./globals.css";
-import { SidebarInset, SidebarProvider} from "@/components/ui/sidebar";
-import { AppSidebar } from "./components/app-sidebar";
-import Navbar from "./components/NavBar";
+// app/layout.tsx
+import "./globals.css"
+import { SidebarInset, SidebarProvider } from "../components/ui/sidebar"
+import { AppSidebar } from "./components/app-sidebar"
+import Footer from "./components/footer"
+import Navbar from "./components/NavBar"
+import { ThemeProvider } from "./components/theme-provider"
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <head>
         <link
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -18,18 +20,19 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <SidebarProvider>
-          <Navbar />
-          <AppSidebar />
-          <SidebarInset>
-            <div className="pt-16 px-4 flex flex-col min-h-screen gap-4">
-              {children}
-              <Footer />
-            </div>
-          </SidebarInset>
-        </SidebarProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SidebarProvider>
+            <Navbar />
+            <AppSidebar />
+            <SidebarInset>
+              <div className="pt-16 px-4 flex flex-col min-h-screen gap-4 bg-white text-black dark:bg-black dark:text-white">
+                {children}
+                <Footer />
+              </div>
+            </SidebarInset>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
-
