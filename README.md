@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 Sistema de Controle de Presença por Turma
 
-## Getting Started
+Este sistema foi desenvolvido com o objetivo de automatizar o registro de presença de alunos em instituições de ensino, utilizando ferramentas gratuitas e integradas do Google: **Forms**, **Sheets** e **Apps Script**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Visão Geral
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A proposta é permitir que professores ou responsáveis registrem a presença de alunos de diferentes turmas por meio de um **formulário único**, e que cada envio seja armazenado automaticamente em uma **planilha separada por turma**, organizada dentro de uma pasta no Google Drive.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧩 Tecnologias Utilizadas
 
-## Learn More
+- [Google Forms](https://forms.google.com) — Formulário para entrada de dados (presença)
+- [Google Sheets](https://sheets.google.com) — Armazenamento das respostas
+- [Google Apps Script](https://script.google.com) — Automação e processamento das respostas
+- [Google Drive](https://drive.google.com) — Organização das planilhas por turma
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👥 Público-Alvo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Este sistema é ideal para:
 
-## Deploy on Vercel
+- Professores que desejam controlar presença digitalmente;
+- Coordenadores e gestores que precisam de relatórios organizados;
+- Instituições de ensino com várias turmas ou turnos;
+- Ambientes educacionais que usam o ecossistema Google Workspace.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📑 Funcionalidades
+
+- Formulário com ramificação de perguntas por turma;
+- Envio automático das respostas para planilhas específicas;
+- Criação automática de planilhas por turma;
+- Organização das planilhas em uma pasta central;
+- Agrupamento de agentes por nível e missões por dificuldade (no backend);
+- Sistema escalável e fácil de manter.
+
+---
+
+## 📘 Documentação Completa
+
+Acesse a [Documentação do Sistema](https://seudominio.com ou link do Notion, Vercel, etc) para:
+
+- Tutorial passo a passo de uso
+- Explicação técnica do script
+- Como adicionar novas turmas ou alunos
+- Dúvidas frequentes (FAQ)
+
+---
+
+## 🛠️ Como usar
+
+1. Acesse a planilha de respostas vinculada ao formulário.
+2. Vá em `Extensões > Apps Script` e cole o script principal.
+3. Configure o gatilho `onFormSubmit`.
+4. Crie uma pasta no Google Drive para armazenar as planilhas.
+5. Teste o envio do formulário e veja a resposta ir para a planilha correta.
+
+---
+
+## 🧪 Exemplo de uso
+
+- [ ] Turma selecionada: **MI76**
+- [ ] Aluno marcado: **João Silva**
+- [x] Ao enviar: A planilha `Presenças - MI76` é criada (caso não exista) e a presença é registrada nela.
+
+---
+
+## 🧑‍💻 Contribuição
+
+Sinta-se à vontade para sugerir melhorias ou abrir *issues* com dúvidas. O sistema pode ser adaptado para controle de atividades, provas, entrega de trabalhos, etc.
+
+---
+
+## 📄 Licença
+
+Este projeto pode ser utilizado livremente para fins educacionais. Consulte os termos de uso das APIs e serviços do Google Workspace ao utilizar institucionalmente.
+
+---
