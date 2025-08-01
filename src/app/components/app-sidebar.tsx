@@ -29,7 +29,7 @@ const data = {
             items: [
                 {
                     title: "Apresentação do sistema",
-                    url: '/introducao#Apresentacao',
+                    url: '/introducao',
                 },
                 {
                     title: "Público-alvo",
@@ -47,11 +47,11 @@ const data = {
             items: [
                 {
                     title: "Sistemas operacionais compatíveis",
-                    url: '#',
+                    url: '/preRequisitos',
                 },
                 {
                     title: "Requisitos mínimos",
-                    url: '#',
+                    url: '/preRequisitos#RequisitosMinimos',
                 },
             ],
         },
