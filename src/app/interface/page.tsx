@@ -1,9 +1,15 @@
 import Documentos from "../components/Documentos";
+import YoutubeVideo from "../components/YoutubeVideo";
 
 export default function Interface(){
     return (
         <div className="flex justify-center items-center pt-20 flex-col gap-20 mb-40">
-            <Documentos id="Acesso" Titulo="" Conteudo="Para utilizar as funções do Google Forms, que é onde nosso sistema de gerenciamento é construído, você inicialmente precisa de uma conta Google. Basta pesquisar em sua barra de pesquisas do navegador “gmail” e escolher a opção “Fazer login” no canto superior direito."  />
+            <Documentos id="Acesso" Titulo="Acesso ao formulario " Conteudo="Para utilizar as funções do Google Forms, que é onde nosso sistema de gerenciamento é construído, você inicialmente precisa de uma conta Google. Basta pesquisar em sua barra de pesquisas do navegador “gmail” e escolher a opção “Fazer login” no canto superior direito."  />
+            <div>
+                <h3 className="text-2xl mb-5 text-[#d81e1e]">Coordenação e ADM: </h3>
+                <YoutubeVideo videoId="9YqOlJ0E80k" />
+                <p className="max-w-[60ch] mt-2.5 text-[16px] text-[#0F0F10] opacity-[76%]  leading-relaxed dark:text-white">Representantes so irão ter acesso via link do formulario para o preenchimento e a partir disso irá fazer o login.</p>
+            </div>
             
         </div>
     )

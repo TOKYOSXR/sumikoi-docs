@@ -61,16 +61,8 @@ const data = {
             items: [
                 {
                     title: "Acesso ao formulário",
-                    url: '#',
-                },
-                {
-                    title: "Estrutura geral",
-                    url: '#',
-                },
-                {
-                    title: "Navegação entre seções",
-                    url: '#',
-                },
+                    url: '/interface',
+                },  
             ],
         },
         {

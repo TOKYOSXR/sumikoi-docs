@@ -6,7 +6,7 @@ export default function Categorias() {
     return (
         <section>
             <h1 className="text-[32px] text-[#d81e1e] mb-6">Explore as Categorias</h1>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid xl:grid-cols-2 gap-6 lg:grid-cols-1 ">
                 <Link href="/introducao">
                     <CardsCategorias caminho="#" titulo="Introdução" conteudo="Aqui explicaremos o motivo do uso do nosso sistema e como desenvolvemos ele." icon="bx bxs-star"></CardsCategorias>
                 </Link>
