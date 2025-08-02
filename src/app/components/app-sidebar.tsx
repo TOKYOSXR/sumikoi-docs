@@ -208,8 +208,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     }, [open])
 
     return (
-        <Sidebar {...props}>
-            <SidebarContent className="gap-2 mt-23 bg-white text-black dark:bg-black dark:text-white">
+        <Sidebar {...props} className="border-r border-transparent dark:border-[#d81e1e]">
+            <SidebarContent className="gap-2 mt-23  text-black  dark:text-white">
                 {data.navMain.map((item) => (
                     <Collapsible
                         key={item.title}
