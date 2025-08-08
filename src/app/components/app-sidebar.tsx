@@ -175,19 +175,19 @@ const data = {
             items: [
                 {
                     title: "Importância do preenchimento correto",
-                    url: '#',
+                    url: '/conclusao#ImportanciaPreenchimento',
                 },
                 {
                     title: "Benefícios para organização",
-                    url: '#',
+                    url: '/conclusao#Beneficios',
                 },
                 {
                     title: "Papel dos representantes e professores",
-                    url: '#',
+                    url: '/conclusao#PapelRepresentantes',
                 },
                 {
                     title: "Contato para suporte técnico",
-                    url: '#',
+                    url: '/conclusao#ContatoSuporte',
                 },
             ],
         },
