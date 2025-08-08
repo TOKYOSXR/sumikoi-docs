@@ -149,23 +149,23 @@ const data = {
             items: [
                 {
                     title: "Salvar link nos favoritos",
-                    url: '#',
+                    url: '/dicasAtalhos#SalvarLink',
                 },
                 {
                     title: "Criar atalho na tela inicial",
-                    url: '#',
+                    url: '/dicasAtalhos#CriarAtalho',
                 },
                 {
                     title: "Preencher presença com atenção",
-                    url: '#',
+                    url: '/dicasAtalhos#PreencherAtencao',
                 },
                 {
                     title: "Usar preenchimento automático",
-                    url: '#',
+                    url: '/dicasAtalhos#PreenchimentoAutomatico',
                 },
                 {
                     title: "Dicas para preenchimento em grupo",
-                    url: '#',
+                    url: '/dicasAtalhos#Dicas',
                 },
             ],
         },
