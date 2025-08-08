@@ -209,7 +209,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     return (
         <Sidebar {...props} className="border-r border-transparent dark:border-[#d81e1e]">
-            <SidebarContent className="gap-2 mt-23  text-black  dark:text-white">
+            <SidebarContent className="gap-2 mt-23  text-black dark:text-white">
                 {data.navMain.map((item) => (
                     <Collapsible
                         key={item.title}
