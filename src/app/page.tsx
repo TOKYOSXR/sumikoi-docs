@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Categorias from "./components/Categorias";
+import BarraNavegacao from "./components/barra-Navegacao";
 
 export default function Home() {
   return (
@@ -7,5 +8,5 @@ export default function Home() {
       <Hero />
       <Categorias />
     </main>
-  );
+  );  
 }

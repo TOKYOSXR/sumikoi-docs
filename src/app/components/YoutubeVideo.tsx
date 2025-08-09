@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function YoutubeVideo ({ videoId }: { videoId: string }) {
     return (
-        <Card className="w-2xl mx-auto">
+        <Card className="mx-auto">
             <CardContent className="aspect-video">
                 <iframe
                     src={`https://www.youtube.com/embed/${videoId}`}
