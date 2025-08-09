@@ -149,23 +149,23 @@ const data = {
             items: [
                 {
                     title: "Salvar link nos favoritos",
-                    url: '#',
+                    url: '/dicasAtalhos#SalvarLink',
                 },
                 {
                     title: "Criar atalho na tela inicial",
-                    url: '#',
+                    url: '/dicasAtalhos#CriarAtalho',
                 },
                 {
                     title: "Preencher presença com atenção",
-                    url: '#',
+                    url: '/dicasAtalhos#PreencherAtencao',
                 },
                 {
                     title: "Usar preenchimento automático",
-                    url: '#',
+                    url: '/dicasAtalhos#PreenchimentoAutomatico',
                 },
                 {
                     title: "Dicas para preenchimento em grupo",
-                    url: '#',
+                    url: '/dicasAtalhos#Dicas',
                 },
             ],
         },
@@ -175,19 +175,19 @@ const data = {
             items: [
                 {
                     title: "Importância do preenchimento correto",
-                    url: '#',
+                    url: '/conclusao#ImportanciaPreenchimento',
                 },
                 {
                     title: "Benefícios para organização",
-                    url: '#',
+                    url: '/conclusao#Beneficios',
                 },
                 {
                     title: "Papel dos representantes e professores",
-                    url: '#',
+                    url: '/conclusao#PapelRepresentantes',
                 },
                 {
                     title: "Contato para suporte técnico",
-                    url: '#',
+                    url: '/conclusao#ContatoSuporte',
                 },
             ],
         },
@@ -209,7 +209,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     return (
         <Sidebar {...props} className="border-r border-transparent dark:border-[#d81e1e]">
-            <SidebarContent className="gap-2 mt-23  text-black  dark:text-white">
+            <SidebarContent className="gap-2 mt-23  text-black dark:text-white">
                 {data.navMain.map((item) => (
                     <Collapsible
                         key={item.title}
