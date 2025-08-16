@@ -11,7 +11,6 @@ export default function YoutubeVideo ({ videoId }: { videoId: string }) {
                     src={`https://www.youtube.com/embed/${videoId}`}
                     title="Tutorial"
                     className="w-full h-full rounded-md"
-                    frameBorder="0"
                     allowFullScreen
                 />
             </CardContent>

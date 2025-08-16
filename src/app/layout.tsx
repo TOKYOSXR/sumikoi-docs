@@ -25,7 +25,7 @@ export default function RootLayout({
             <Navbar />
             <AppSidebar />
             <SidebarInset>
-              <div className="pt-16 px-4 flex flex-col min-h-screen gap-4 bg-white text-black dark:bg-[#171717] dark:text-white">
+              <div className="pt-16 px-4 flex flex-col min-h-screen gap-4 bg-white text-black dark:bg-[#2c2c2c] dark:text-white">
                 {children}
                 <Footer />
               </div>

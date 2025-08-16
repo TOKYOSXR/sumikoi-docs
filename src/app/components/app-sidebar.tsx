@@ -70,76 +70,44 @@ const data = {
             url: '#',
             items: [
                 {
-                    title: "Seção 1 - Seleção da turma",
+                    title: "Representante",
+                    url: '/funcionalidades#representante',
+                },
+                {
+                    title: "Coordenação",
                     url: '#',
                 },
                 {
-                    title: "Seção 2 - Registro de presença",
+                    title: "Administrador",
                     url: '#',
                 },
-                {
-                    title: "Seção 3 - Informações da aula",
-                    url: '#',
-                },
-                {
-                    title: "Envio",
-                    url: '#',
-                },
-                {
-                    title: "Exemplo prático",
-                    url: '#',
-                },
+               
             ],
         },
-        {
-            title: "Configurações e Personalização",
-            url: '#',
-            items: [
-                {
-                    title: "Cabeçalho e logotipo",
-                    url: '#',
-                },
-                {
-                    title: "Cores e layout",
-                    url: '#',
-                },
-                {
-                    title: "Campos obrigatórios",
-                    url: '#',
-                },
-                {
-                    title: "Controle de acesso",
-                    url: '#',
-                },
-                {
-                    title: "Mensagens personalizadas",
-                    url: '#',
-                },
-            ],
-        },
+    
         {
             title: "Erros Comuns e Soluções",
             url: '#',
             items: [
                 {
                     title: "Campos obrigatórios não preenchidos",
-                    url: '#',
+                    url: '/erros#campos',
                 },
                 {
                     title: "Lista de alunos não aparece",
-                    url: '#',
+                    url: '/erros#listaAlunos',
                 },
                 {
                     title: "Usuário sem acesso",
-                    url: '#',
+                    url: '/erros#semAcesso',
                 },
                 {
                     title: "Problemas em datas no mobile",
-                    url: '#',
+                    url: '/erros#datasMobile',
                 },
                 {
                     title: "Soluções para erros",
-                    url: '#',
+                    url: '/erros#errosSolu',
                 },
             ],
         },
@@ -208,8 +176,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     }, [open])
 
     return (
-        <Sidebar {...props} className="border-r border-transparent dark:border-[#d81e1e]">
-            <SidebarContent className="gap-2 mt-23  text-black dark:text-white">
+        <Sidebar {...props} className="border-r border-transparent dark:border-[#d81e1e] dark:bg-[#2c2c2c]">
+            <SidebarContent className="gap-2 mt-23  text-black dark:text-white dark:bg-[#2c2c2c]">
                 {data.navMain.map((item) => (
                     <Collapsible
                         key={item.title}
