@@ -11,10 +11,10 @@ const devs = [
     foto: "/jusce.png"
   },
   {
-    nome: "Henrique Menel",
+    nome: "Henrique Eduardo da Costa Menel",
     funcao: "Desenvolvedor Full Stack",
     descricao: "Desenvolvedor Full Stack com experiência em diversas tecnologias. Focado em criar soluções eficientes e escaláveis.",
-    foto: "/default.jpg"
+    foto: "/henrique.png"
   },
   {
     nome: "Joana Jensen Schifter",
@@ -43,29 +43,37 @@ export default function Criadores() {
   const currentDev = devs[currentIndex];
 
   return (
-    <div className="mt-40 flex-col justify-center">
-        <h1 className="mb-10 text-center text-[35px] text-[#d81e1e]">Desenvolvedores do Sistema</h1>
+    <div className="mt-40 flex flex-col items-center px-4">
+      <h1 className="mb-10 text-center text-3xl sm:text-[35px] text-[#d81e1e]">
+        Desenvolvedores do Sistema
+      </h1>
+
+      {/* CARD */}
       <div
-        className={`p-6 border border-[#0F0F10]/20 hover:border-[#0F0F10]/50 dark:border-white/20 dark:hover:border-white/40 transition-all rounded-lg w-full bg-white dark:bg-[#1a1a1a]`}
+        className="w-full  mx-auto p-6 border border-[#0F0F10]/20 hover:border-[#0F0F10]/50 dark:border-white/20 dark:hover:border-white/40 transition-all rounded-lg bg-white dark:bg-[#1a1a1a]"
       >
-        <div className={`flex flex-row   gap-5  transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}>
+        <div
+          className={`flex flex-col sm:flex-row gap-5 transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}
+        >
           <Image
             src={currentDev.foto}
             alt={currentDev.nome}
-            width={200}
-            height={100}
-            className="rounded-full object-cover aspect-square"
+            width={150}
+            height={150}
+            className="rounded-full object-cover aspect-square self-center sm:self-auto"
           />
 
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div>
-              <h2 className="text-xl font-bold text-center text-[#F3603A]">{currentDev.nome}</h2>
-              <p className="text-center text-gray-600 dark:text-gray-400 mt-1">{currentDev.funcao}</p>
-            </div>
-            <p className="text-center text-gray-500 dark:text-gray-300 mt-2 max-w-[50ch]">{currentDev.descricao}</p>
+          <div className="flex flex-col items-center sm:items-start justify-center gap-4 ml-6">
+            <h2 className="text-xl font-bold text-center sm:text-left text-[#F3603A]">
+              {currentDev.nome}
+            </h2>
+            <p className="text-center sm:text-left text-gray-600 dark:text-gray-400 mt-1">
+              {currentDev.funcao}
+            </p>
           </div>
         </div>
       </div>
     </div>
+
   );
 }
