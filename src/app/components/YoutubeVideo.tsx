@@ -1,7 +1,7 @@
 // Componente para incorporar um vídeo do YouTube nas páginas
 // Recebe uma propriedade videoId, que é o identificador do vídeo do YouTube a ser exibido
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent} from "@/components/ui/card"
 
 export default function YoutubeVideo ({ videoId }: { videoId: string }) {
     return (
